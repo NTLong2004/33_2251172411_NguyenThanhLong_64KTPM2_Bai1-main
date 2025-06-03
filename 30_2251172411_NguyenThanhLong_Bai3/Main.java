@@ -26,7 +26,7 @@ public class SavingsAccount extends Account {
         if (amount > 0 && (balance - amount) >= MIN_BALANCE) {
             balance -= amount;
         } else {
-            System.out.println("Rút tiền thất bại: phải giữ số dư >= 100.");
+            System.out.println("Rút tiền thất bại: Bạn làm deck gi còn tiền. Phải giữ số dư >= 100.");
         }
     }
 }
@@ -38,7 +38,7 @@ public abstract class AccountFactory {
 
 // ConcreteCreator: SavingsAccountFactory
 public class SavingsAccountFactory extends AccountFactory {
-    @Override
+    @Override   
     public Account createAccount(double initialBalance) {
         return new SavingsAccount(initialBalance);
     }
